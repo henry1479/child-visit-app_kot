@@ -12,7 +12,7 @@ import java.io.Writer
 class JsonParser {
     companion object {
         val parser: Gson = GsonBuilder().create()
-        fun <T> read(reader: Reader, resourceClass: Class<T>): T {
+        fun <T> read(reader: Reader): T {
             return parser.fromJson<T>(reader, object : TypeToken<List<Child>>() {}.type)
         }
 
